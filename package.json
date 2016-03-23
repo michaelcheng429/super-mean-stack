@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_PATH=$NODE_PATH:./src node server",
+    "start": "node server",
     "dev": "npm start & webpack-dev-server --progress --colors",
     "build": "webpack --progress --colors --config webpack.prod.config.js"
   },

@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Todo = require('server/db/db').Todo;
+var Todo = require('../db/db').Todo;
 var express = require('express');
 var router = express.Router();
 
