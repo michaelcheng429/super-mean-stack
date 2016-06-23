@@ -40,4 +40,13 @@ router.delete('/:id', function(req, res) {
     });
 });
 
+router.put('/checkbox/:id', function(req, res) {
+    var id = req.params.id;
+    var isCompleted = req.body.isCompleted;
+    Todo.update({_id: id}, {$set: { isCompleted: isCompleted}}, function(err){
+        if (err) { console.log(err); }
+        res.send('isCompleted Updated');
+    });
+});
+
 module.exports = router;
