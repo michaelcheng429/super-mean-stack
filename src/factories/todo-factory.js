@@ -58,12 +58,26 @@ const todoFactory = angular.module('app.todoFactory', [])
         }
     }
 
+
+    function onCompletedClick($scope, todo){
+
+        todo.isCompleted = !todo.isCompleted;
+        let isComplete = todo.isCompleted;
+        let requestBody = { isCompleted: isComplete };
+
+        $http.put('/todos/checkbox/' + todo._id, requestBody).then(function(response){
+            getTasks($scope);
+        });
+    };
+
+
     return {
         getTasks,
         createTask,
         updateTask,
         deleteTask,
-        watchCreateTaskInput
+        watchCreateTaskInput,
+        onCompletedClick
     };
 });
 
