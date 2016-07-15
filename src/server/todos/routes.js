@@ -23,7 +23,9 @@ router.post('/', function(req, res) {
 router.put('/:id', function(req, res) {
     var id = req.params.id;
     Todo.update({ _id: mongoose.Types.ObjectId(id) }, {
-        $set: { task: req.body.task }
+        $set: { task: req.body.task,
+                isCompleted: req.body.isCompleted
+              }
     }, function(err) {
         if (err) { console.log(err); }
 
