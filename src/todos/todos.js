@@ -22,6 +22,7 @@ export default function($scope, todoFactory) {
 
     $scope.onCompletedClick = todo => {
         todo.isCompleted = !todo.isCompleted;
+        todo.updatedTask  = todo.task;
     };
 
     $scope.onEditClick = todo => {

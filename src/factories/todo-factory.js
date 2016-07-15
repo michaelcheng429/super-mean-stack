@@ -27,7 +27,8 @@ const todoFactory = angular.module('app.todoFactory', [])
     }
 
     function updateTask($scope, todo) {
-        $http.put(`/todos/${todo._id}`, { task: todo.updatedTask }).success(response => {
+        $http.put(`/todos/${todo._id}`, { task: todo.updatedTask,
+                                          isCompleted: todo.isCompleted }).success(response => {
             getTasks($scope);
             todo.isEditing = false;
         });

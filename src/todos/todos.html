@@ -17,7 +17,7 @@
             <td>
                 <input type="checkbox"
                     ng-checked="todo.isCompleted"
-                    ng-click="onCompletedClick(todo)" />
+                    ng-click="onCompletedClick(todo); updateTask(todo)" />
             </td>
             <td>
                 <span ng-if="!todo.isEditing"
